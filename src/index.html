@@ -1,27 +1,42 @@
-<template>
-  <div id="app">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="app.css">
+  <title>VueJS</title>
+</head>
+
+<body>
+  <div class="container">
     <div class="row">
-      <div class="col-md-9 p-4">
+      <div class="col-md-8 pt-4">
         <div class="form-group">
           <input type="text" class="form-control" id="search" placeholder="Поиск">
         </div>
       </div>
     </div>
+    
 
     <div class="row">
-       <div class="col-md-4 pt-3">
-        <div id="filtersthing">
-          <Filter
-          v-for="filter in filters"
-          v-bind:key="filter.id"
-          v-bind:filter-text="filter.filterText">
-          </Filter>
+      <div class="col-md-4 pt-3">
+        <div class="form-group">
+          <label for="filters">Фильтры</label>
         </div>
-        <!-- <ul class="list-group">
-          <li class="list-group-item list-group-item-action pointer">Фильтр 1</li>
-         </ul> -->
-      </div>
 
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-action pointer">Фильтр 1</li>
+          <li class="list-group-item list-group-item-action pointer">Фильтр 2</li>
+          <li class="list-group-item list-group-item-action pointer">Фильтр 3</li>
+          <li class="list-group-item list-group-item-action pointer">Фильтр 4</li>
+          <li class="list-group-item list-group-item-action pointer">Фильтр 5</li>
+          <li class="list-group-item list-group-item-action pointer">Фильтр 6</li>
+         </ul>
+      </div>
       <div class="col-md-8 pt-3">
         <div class="row">
           <div class="col-md-8">
@@ -47,15 +62,18 @@
                   <span>Уровень батареи</span>
                 </div>
               </li>
-            </ul>    
+              
+            </ul>
           </div>
+
           <hr>
-          
+
         </div>
         <div class="row pt-4">
           <div class="col-md-8">
             <div class="form-group">
-              <label>Пакеты</label>             
+              <label>Пакеты</label>
+              
             </div>
           
             <ul class="list-group">
@@ -63,38 +81,23 @@
                 <div class="row p-2 pl-3">
                   <span>Пакеты принятых данных</span>
                 </div>
-              </li>            
+                <div class="row p-2 pl-3">
+                  <span>Пакеты переданных данных</span>
+                </div>
+                <div class="row p-2 pl-3">
+                  <span>Пакеты принятых данных</span>
+                </div>
+                <div class="row p-2 pl-3">
+                  <span>Пакеты принятых данных</span>
+                </div>
+              </li>
+            
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </div>
-  
-</template>
-
-<script>
-import Filters from './components/Filters.vue'
-import Information from './components/Information.vue'
-import DataPack from './components/DataPack.vue'
-
-export default {
-  name: 'app',
-  components: {
-    Filters,
-    Information,
-    DataPack
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+</body>
+</html>

@@ -1,0 +1,20 @@
+.detailed-car-image {
+  height: 200px;
+  width: 100%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.centr {
+  justify-content: center;
+}
+
+.pdd {
+  margin-left: -9px;
+}
+
+h1 {
+  margin-left: 95px;
+}
