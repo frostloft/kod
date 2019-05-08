@@ -1,72 +1,26 @@
+
 <template>
   <div id="app">
-    <div class="row">
-      <div class="col-md-9 p-4">
+     <div class="row pl-5">
+      <div class="col-md-11">
         <div class="form-group">
           <input type="text" class="form-control" id="search" placeholder="Поиск">
         </div>
       </div>
     </div>
 
-    <div class="row">
-       <div class="col-md-4 pt-3">
-        <div id="filtersthing">
-          <Filter
-          v-for="filter in filters"
-          v-bind:key="filter.id"
-          v-bind:filter-text="filter.filterText">
-          </Filter>
-        </div>
-        <!-- <ul class="list-group">
-          <li class="list-group-item list-group-item-action pointer">Фильтр 1</li>
-         </ul> -->
-      </div>
+    <div class="row pl-5">
+       <div class="col-md-12">
+             <Filters/>
+          </div>
+    </div>
 
-      <div class="col-md-8 pt-3">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="form-group">
-              <label for="search">Информация о выбранном устройстве</label>
-            </div>
-          
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-action pointer">
-                <div class="row p-2 pl-3">
-                  <span>Имя</span>
-                </div>
-                <div class="row p-2 pl-3">
-                  <span>Описание</span>
-                </div>
-                <div class="row p-2 pl-3">
-                  <span>Идентификатор (devEUI)</span>
-                </div>
-                <div class="row p-2 pl-3">
-                  <span>Состояние</span>
-                </div>
-                <div class="row p-2 pl-3">
-                  <span>Уровень батареи</span>
-                </div>
-              </li>
-            </ul>    
-          </div>
-          <hr>
-          
-        </div>
-        <div class="row pt-4">
-          <div class="col-md-8">
-            <div class="form-group">
-              <label>Пакеты</label>             
-            </div>
-          
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-action pointer">
-                <div class="row p-2 pl-3">
-                  <span>Пакеты принятых данных</span>
-                </div>
-              </li>            
-            </ul>
-          </div>
-        </div>
+    <div class="row pl-5">
+      <div class="col-md-5 pt-3">
+            <Information/>
+      </div>
+        <div class="col-md-6 pt-3">
+            <DataPack/>
       </div>
     </div>
   </div>
