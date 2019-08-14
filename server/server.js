@@ -37,67 +37,23 @@ mongodb.MongoClient.connect(mongoUri, function(error, client) {
     console.log("MongoClient connected")
     var db = client.db('appdb')
     //var collection = client.collection(config.mongodb.collection)
-    db.collection(config.mongodb.collection);
-    db.createIndex({ "topic": 1 });
+    db.collection(config.mongodb.collection).createIndex({ "topic": 1 });
 
     client.on('message', function (topic, message) {
+        console.log("got object")
         var messageObject = {
             topic: topic,
             message: message.toString()
         };
+        console.log("got object")
         db.collection.insert(messageObject, function(error, result) {
             if(error != null) {
                 console.log("ERROR: " + error);
             }
+            else {
+                console.log(result)
+            }
         });
     });
+    console.log('hello bl')
 });
-
-
-/*var mongodb = require('mongodb')
-var mqtt = require('mqtt')
-
-var mqttUri = 'mqtt://iot.eclipse.org'
-var mongoUri = 'mongodb://localhost:27017'
-var client = mqtt.connect(mqttUri);
-
-client.on('connect', function() {
-    client.subscribe('Topic07')
-    console.log('Has been successfully subscribed')
-})
-
-    var dbName = 'dbname'
-mongodb.MongoClient.connect(mongoUri, function(error, client) {
-    if(error != null) {
-        throw error
-    }
-    console.log("connected to server")
-    var db = client.db(dbName)
-
-    const note = { text: 'some text', title: 'sometitle' };
-    db.collection('dbcollection').insert(note, (err, result) => {
-        if (err) {
-            console.log('ooops')
-        } else {
-            console.log(result.ops[0]);
-        }
-        console.log("got it")
-    })
-    /*
-    var collection = dbname.collection('dbcollection');
-    collection.createIndex({"topic":1})
-
-    client.on('message', function(topic, message) {
-        var messageObject = {
-            topic: topic,
-            message: message.ToString()
-        };
-
-        collection.insert(messageObject, function(error, result) {
-            if(error != null) {
-                console.log("ERROR:" + error)
-            }
-        })
-    })
-
-})*/

@@ -3,13 +3,18 @@
       <h4>Информация о выбранном устройстве</h4>
         <ul class="list-group">
           <li
-            class="list-group-item list-group-item-action pointer mb-3"
+            class="list-group-item list-group-item-action pointer list-group-item-light mb-3"
           v-for="datapack in datapacks">
             <p>ID приложения: {{ datapack.applicationID }}</p>
             <p>Имя: {{ datapack.applicationName }}</p>
             <p>Имя устройства: {{ datapack.deviceName }}</p>
             <p>DevEUI: {{ datapack.devEUI }}</p>
-            <p>rxInfo: {{ datapack.rxInfo }}</p>
+            <p>RSSI: {{ datapack.rssi }}</p>
+            <p>LoRaSNR: {{ datapack.loRaSNR }}</p>
+            <p>Местоположение:</p>
+            <p><span>Широта: {{ datapack.latitude }}°  </span>
+            <span>Долгота: {{ datapack.longitude }}°  </span>
+            <span>Высота: {{ datapack.altitude }} м над уровнем моря  </span></p>
             <p>Порт: {{ datapack.fPort }}</p>
             <p>Шлюз: {{ datapack.gatewayID }}</p>
             <p>Имя шлюза: {{ datapack.gatewayName }}</p>
@@ -31,7 +36,11 @@ export default {
           applicationName: 'teplo-klu15',
           deviceName: 'KaratKompact2_213--18310031',
           devEUI: '383a215ffffefc4c',
-          rxInfo: '["rssi":-119,"loRaSNR":-12.8,"location":{"latitude":56.82692,"longitude":60.57954,"altitude":356}}]',
+          rssi: '-119',
+          loRaSNR: '-12.8',
+          latitude: '56.82692',
+          longitude: '60.57954',
+          altitude: '356',
           gatewayID: '985dadfffe86b552',
           gatewayName: 'VegaBS1',
           time: '2019-03-22T10:21:12.072803Z',
@@ -55,3 +64,10 @@ export default {
   }
 }
 </script>
+
+<style>
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+   }
+</style>

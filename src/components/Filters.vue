@@ -1,15 +1,16 @@
+<!-- eslint-disable -->
 <template>
     <div id="filt">
       <div class="row pl-3">
       <ul class="list-group list-group-horizontal col-md-11">
           <li
-            class="list-group-item list-group-item-action pointer"
-          v-for="filter in filters">
+            class="list-group-item list-group-item-action pointer" 
+            v-for="filter in filters">
             {{ filter.text }}
           </li>
         </ul>
       </div>
-      </div>
+    </div>
 </template>
 
 <script>
@@ -27,4 +28,3 @@ export default {
   }
 }
 </script>
-
